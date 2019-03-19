@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
     <title>我的导航</title>
 </head>
 <body>
     <header></header>
-    <main id='y'></main>
+    <main >
+        <div class="pass"id='y'></div>
+    </main>
     <footer></footer>
     <script>
         var keys={
@@ -28,10 +31,18 @@
             while(index2<row['length']){
                 z=document.createElement('kbd')
                 z.textContent=row[index2]
+                buttonX=document.createElement('button')
+                buttonX.textContent='编辑'
+                z.appendChild(buttonX)
                 x.appendChild(z)
                 index2=index2+1
             }
             index=index+1
+        }
+        document.onkeypress=function(xxx){
+            key=xxx['key']//获取键盘信息
+            website=hash[key]//得到这个键对应的网站
+            location.href='http://'+website//把
         }
 	</script>
 </body>
